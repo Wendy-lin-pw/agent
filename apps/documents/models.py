@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Document(models.Model):
-    """教师上传的课程文档。"""
+    """教师或学生上传的课程文档。"""
 
     class Status(models.TextChoices):
         PENDING = "pending", "待处理"

@@ -2,7 +2,8 @@
 大模型调用封装：知识点抽取 + 自动打 tag。
 
 设计要点：
-- 只依赖 OpenAI 兼容接口（云 API），本地不部署模型，无需 GPU；
+- 只依赖 OpenAI 兼容接口：默认调用云 API，把 LLM_API_BASE 指向本地推理服务
+  （Ollama / vLLM）即可切换为本地模型，业务代码不变；
 - 未配置 API Key 时返回 mock 数据，方便开发联调；
 - 生产环境中本模块由异步 Worker（Celery / K8s Job）调用，
   避免 HTTP 请求阻塞在大模型的长响应上。
