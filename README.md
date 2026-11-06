@@ -4,7 +4,7 @@
 
 ## 功能简介
 
-教师或学生上传课程文档（Markdown / TXT / PDF），系统调用大模型自动完成：
+教师或学生上传课程文档（Markdown / TXT，PDF 解析为后续迭代），系统调用大模型自动完成：
 
 1. **知识点抽取**：从文档中提取结构化知识点（标题 + 内容摘要）；
 2. **自动打标**：为每个知识点生成 3~5 个标签（tag）；
@@ -59,6 +59,7 @@ make run           # 启动开发服务器 http://127.0.0.1:8000
 |---|---|---|
 | POST | `/api/documents/` | 上传课程文档 |
 | POST | `/api/documents/<id>/extract/` | 触发大模型抽取（生成知识点 + tag） |
+| POST | `/api/documents/batch_extract/` | 批量触发抽取（框架占位，生产阶段接入队列） |
 | GET  | `/api/tags/` | 所有标签列表 |
 | GET  | `/api/knowledge/?tag=xxx` | 按标签检索知识点 |
 
