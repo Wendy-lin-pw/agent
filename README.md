@@ -1,4 +1,4 @@
-# CS 教学智能体（teaching-agent）
+# 计算机类课程教学智能体（teaching-agent）
 
 计算机类课程教学智能体 —— 知识点自动整理与标签检索。
 
